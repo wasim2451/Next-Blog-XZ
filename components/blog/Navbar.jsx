@@ -1,7 +1,7 @@
 "use client";
 import { Command, EqualApproximately } from 'lucide-react';
 import Link from "next/link";
-import { LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs";
+import { LoginLink, LogoutLink, useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import { outfit } from './fonts';
 import { Button } from '../ui/button';
 import { usePathname } from 'next/navigation';
@@ -10,8 +10,9 @@ import clsx from 'clsx';
 export default function Navbar() {
     const pathname = usePathname();
     console.log(pathname);
+    const { isAuthenticated } = useKindeBrowserClient();
     return (
-        <div className='px-[10px] md:px-[11%] py-[20px] md:py-[30px] '>
+        <div className='px-[10px] md:px-[11%] pt-[20px] md:py-[30px] '>
             <nav className='flex justify-between items-center'>
                 <div className='flex justify-start items-center gap-[30px] '>
                     <div className='flex items-center gap-2 md:gap-3'>
@@ -25,9 +26,12 @@ export default function Navbar() {
 
                     </ul>
                 </div>
-                <div className='flex justify-center items-center'>
+                {isAuthenticated ? <div className='flex justify-center items-center'>
+                    <Button className='px-[20px] bg-slate-100 text-slate-700 hover:bg-slate-200'><LogoutLink>Logout</LogoutLink></Button>
+                </div> : <div className='flex justify-center items-center'>
                     <Button className='px-[20px] bg-slate-100 text-slate-700 hover:bg-slate-200'><LoginLink>Login</LoginLink></Button>
-                </div>
+                </div>}
+
 
             </nav>
             <div className='flex justify-center items-center mt-[10px]'>
