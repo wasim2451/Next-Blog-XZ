@@ -1,16 +1,19 @@
 'use client'
+import { use } from "react";
 import EditorWrapper from "@/components/blog/EditorWrapper";
 import { supabase } from "@/lib/supabase/client";
 import { useState } from "react";
-
+import { useRouter } from "next/navigation";  
 interface Props {
-    params: { postId: string };
+   params: Promise<{ postId: string }>;
 }
 
 export default function CreateBlogPage({ params }: Props) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [file, setFile] = useState<File | null>(null);
+    const { postId } = use(params);
+    const router = useRouter();
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
@@ -27,9 +30,9 @@ export default function CreateBlogPage({ params }: Props) {
             const { error } = await supabase.from('posts').insert([
                 {
                     title: title,
-                    content: JSON.parse(content),
+                    content: JSON.stringify(content),
                     cover_url: coverUrl,
-                    user_id: params.postId
+                    user_id: postId
                 }
             ]);
             if (error) throw new Error(error.message);
@@ -37,6 +40,7 @@ export default function CreateBlogPage({ params }: Props) {
             setTitle("");
             setContent("");
             setFile(null);
+            router.push('/dashboard/userDashboard');
         } catch (error) {
             console.error("Error saving blog:", error);
             alert("Failed to save the blog. Please try again.");
@@ -54,7 +58,7 @@ export default function CreateBlogPage({ params }: Props) {
                         className="text-2xl md:text-5xl font-bold text-center outline-none focus:ring-2 focus:ring-slate-400"
                     />
                 </div>
-                <div className="mb-6 border-[2px] border-slate-400 rounded-md p-2">
+                <div className="mb-6 border-[2px] border-slate-400 rounded-md md:p-2">
                     <EditorWrapper onChange={(value) => setContent(value)} />
                 </div>
                 <div className="flex justify-center items-center gap-2">
