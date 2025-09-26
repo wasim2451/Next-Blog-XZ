@@ -39,12 +39,13 @@ export async function Dashboard() {
     console.log(user);
     return <>
         <div className="px-[10px] md:px-[11%] py-[20px] md:py-[30px] ">
-            <div className="flex flex-col md:gap-3 items-center justify-center gap-2">
+            <div className="flex flex-col md:gap-3 items-center justify-center gap-2 text-center">
                 <Heading text={`Dashboard of ${user?.given_name}`} />
                 <Paragraph text={`Write your knowledge and feelings and let the world know about it .`} />
-                <Button className=" mt-[20px] bg-white border-[2px] border-slate-800 text-black font-extrabold text-[14px] p-[20px] px-[30px] hover:bg-white hover:border-slate-400 "><Link href={`/editor/2`}>Write a Blog</Link></Button>
+                <Button className=" mt-[20px] bg-white border-[2px] border-slate-800 text-black font-extrabold text-[14px] p-[20px] px-[30px] hover:bg-white hover:border-slate-400 "><Link href={`/editor/${user?.id}`}>Write a Blog</Link></Button>
                 <UserInfo/>
             </div>
+            <hr  className="border-slate-200 border-[1px] rounded-4xl md:mt-[20px] mt-[10px] mx-[20%]"/>
             
 
         </div>

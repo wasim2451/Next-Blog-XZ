@@ -36,8 +36,8 @@ export default function Navbar() {
 
             </nav>
             <div className='flex justify-center items-center mt-[10px]'>
-                <div className="breadcrumbs text-sm md:hidden">
-                    <ul className='text-slate-700'>
+                <div className=" text-sm md:hidden">
+                    <ul className='text-slate-700 flex justify-center items-center gap-5'>
                         <li><Link className={clsx(
                             "text-gray-500 hover:text-gray-600 transition",
                             pathname === "/" && "font-semibold text-gray-600"
