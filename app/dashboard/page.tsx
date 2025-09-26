@@ -1,4 +1,13 @@
-export function Dashboard(){
-    return <h1>Dashboard - Protected Route</h1>;
+import React from 'react'
+
+interface Props {}
+
+function Page(props: Props) {
+    const {} = props
+
+    return (
+        <></>
+    )
 }
-export default Dashboard;
+
+export default Page

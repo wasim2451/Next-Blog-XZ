@@ -20,9 +20,10 @@ export default function Navbar() {
                         <p className='text-[20px] md:text-[23px] font-[900]' style={outfit.style}>inkWire</p>
                     </div>
                     <ul className='hidden md:flex items-center md:gap-3 text-slate-500 font-[400] text-sm md:text-[15px]'>
-                        <li className='inline-block mr-4 hover:text-slate-700'><Link href="/">Features</Link></li>
+                        <li className='inline-block mr-4 hover:text-slate-700'><Link href="/">Home</Link></li>
                         <li className='inline-block mr-4 hover:text-slate-700'><Link href="/about">About</Link></li>
                         <li className='inline-block mr-4 hover:text-slate-700'><Link href="/blogs">Blogs</Link></li>
+                        {isAuthenticated ? <li className='inline-block mr-4 hover:text-slate-700'><Link href="/dashboard/userDashboard">Dashboard</Link></li>:<></>}
 
                     </ul>
                 </div>
@@ -49,6 +50,10 @@ export default function Navbar() {
                             "text-gray-500 hover:text-gray-600 transition",
                             pathname === "/blogs" && "font-semibold text-gray-600"
                         )} href={'/blogs'}>Blogs</Link></li>
+                        { isAuthenticated ? <li><Link className={clsx(
+                            "text-gray-500 hover:text-gray-600 transition",
+                            pathname === "/blogs" && "font-semibold text-gray-600"
+                        )} href={'/dashboard/userDashboard'}>Dashboard</Link></li> : <></>}
                     </ul>
                 </div>
             </div>
