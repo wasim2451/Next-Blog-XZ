@@ -6,6 +6,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { outfit } from "@/components/blog/fonts";
+import { supabase } from "@/lib/supabase/client";
+
 export async function Dashboard() {
     const { isAuthenticated, getUser } = getKindeServerSession();
     const isUserAuthenticated = await isAuthenticated();
@@ -19,7 +21,8 @@ export async function Dashboard() {
         email: `${user?.email}`,
         avatar_url: `${user?.picture}`
     }
-    // Store into Database 
+    //Get Blogs from DB 
+     
 
 
 

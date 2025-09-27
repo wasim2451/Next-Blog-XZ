@@ -4,6 +4,7 @@ import "./globals.css";
 import { AuthProvider } from "./AuthProvider";
 import Navbar from "@/components/blog/Navbar";
 import { ThemeProvider } from "@/components/theme-provider"
+import Footer from "@/components/blog/Footer";
 
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({
                     <AuthProvider>
                         <Navbar />
                         {children}
+                        <Footer/>
                     </AuthProvider>
                 </ThemeProvider>
 
