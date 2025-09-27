@@ -69,7 +69,7 @@ export default function CreateBlogPage({ params }: Props) {
                     className="text-2xl md:text-5xl font-bold text-center outline-none focus:ring-2 focus:ring-slate-400"
                 />
             </div>
-            <div className="mb-6 border-[2px] border-slate-400 rounded-md md:p-2">
+            <div className="mb-6 border-[1px] border-slate-300 rounded-md md:p-2">
                 <EditorWrapper onChange={(value) => setContent(value)} />
             </div>
             <div className="flex justify-center items-center gap-2">

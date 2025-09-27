@@ -1,9 +1,44 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
+/* Define theme tokens so you don't have to write dark: everywhere */
+
+:root {
+  --background: 255 255 255;      /* white */
+  --foreground: 17 24 39;        /* slate-900 */
+  --card: 255 255 255;
+  --card2: 228 239 231;
+  --card-foreground: 17 24 39;
+  --border: 229 231 235;
+  --secondary: 253 250 246;
+  --black: 0 0 0;
+  --white: 238 238 238;
+  --black-hover: 28 53 45 ;
+  --badge:255 242 242
+}
+
+.dark {
+  --background: 3 7 18;          /* slate-950 */
+  --foreground: 255 255 255;     /* white */
+  --card: 15 23 42;
+  --card2: 33 33 33;              /* slate-900 */
+  --card-foreground: 241 245 249; /* slate-100 */
+  --border: 51 65 85;
+  --secondary: 25 24 59;
+  --black: 253 253 253;
+  --white: 0 0 0;
+  --black-hover: 255 242 242;
+  --badge: 28 53 45;           /* slate-700 */
+}
+
+body {
+  @apply bg-[rgb(var(--background))] text-[rgb(var(--foreground))];
+}
+
 .bn-editor {
-  background-color: white !important;
-  color: black !important;
+  background-color: rgba(255, 255, 255, 0.959) !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 .bn-container {
