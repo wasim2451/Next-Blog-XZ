@@ -8,19 +8,23 @@
   --background: 255 255 255;      /* white */
   --foreground: 17 24 39;        /* slate-900 */
   --card: 255 255 255;
-  --card2: 228 239 231;
+  --card2: 226 232 240;
   --card-foreground: 17 24 39;
   --border: 229 231 235;
   --secondary: 253 250 246;
   --black: 0 0 0;
   --white: 238 238 238;
   --black-hover: 28 53 45 ;
-  --badge:255 242 242
+  --badge:255 242 242;
+  --file: 169 181 223;
+  --submit:0 0 0;
+  --editor:0 0 0;
+  --bn-editor:253 253 253;
 }
 
 .dark {
   --background: 3 7 18;          /* slate-950 */
-  --foreground: 255 255 255;     /* white */
+  --foreground: 255 255 255;     /* whitte */
   --card: 15 23 42;
   --card2: 33 33 33;              /* slate-900 */
   --card-foreground: 241 245 249; /* slate-100 */
@@ -29,7 +33,11 @@
   --black: 253 253 253;
   --white: 0 0 0;
   --black-hover: 255 242 242;
-  --badge: 28 53 45;           /* slate-700 */
+  --badge: 28 53 45;
+  --file: 169 181 223;
+  --submit:0 49 97 ; 
+  --editor: 253 253 253;
+  --bn-editor :0 0 0;         /* slate-700 */
 }
 
 body {
@@ -37,18 +45,21 @@ body {
 }
 
 .bn-editor {
-  background-color: rgba(255, 255, 255, 0.959) !important;
-  color: rgb(0, 0, 0) !important;
+  background-color: rgb(var(--background)) !important;
+  color: rgb(var(--foreground)) !important;
+  min-height: 300px;
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 
 .bn-container {
-  background-color: white !important;
+  background-color: rgb(var(--background)) !important;
+  color: rgb(var(--foreground)) !important;
   min-height: 300px;
 }
 
-/* Optional: style commands/slash menu */
 .bn-slash-menu {
-  background-color: white !important;
-  color: black !important;
-  border: 1px solid #ddd;
+  background-color: rgb(var(--card)) !important;
+  color: rgb(var(--card-foreground)) !important;
+  border: 1px solid rgb(var(--border));
 }

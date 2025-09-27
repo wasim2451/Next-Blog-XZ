@@ -44,7 +44,7 @@ export default function Navbar() {
                 ) : (
                     <div className="flex justify-center items-center gap-2">
                         <ModeToggle />
-                        <Button className="px-[20px] bg-[rgb(var(--card))] text-[rgb(var(--card-foreground))] border border-[rgb(var(--border))] hover:bg-[rgb(var(--secondary))]">
+                        <Button className="px-[20px] bg-[rgb(var(--card2))] text-[rgb(var(--card-foreground))]  hover:bg-[rgb(var(--secondary))]">
                             <LoginLink>Login</LoginLink>
                         </Button>
                     </div>

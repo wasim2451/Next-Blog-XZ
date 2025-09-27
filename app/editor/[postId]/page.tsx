@@ -75,7 +75,7 @@ export default function CreateBlogPage({ params }: Props) {
             <div className="flex justify-center items-center gap-2">
                 <label
                     htmlFor="coverImage"
-                    className="px-4 py-2 bg-slate-200 rounded-md hover:bg-slate-300 cursor-pointer"
+                    className="px-4 py-2 bg-slate-200 rounded-md hover:bg-slate-300 cursor-pointer dark:text-black text-sm dark:bg-slate-300 font-semibold"
                 >
                     Upload Cover Image
                 </label>
@@ -84,7 +84,10 @@ export default function CreateBlogPage({ params }: Props) {
                 {file && <span className="text-sm">{file.name}</span>}
                 <button
                     type="submit"
-                    className="cursor-pointer px-4 py-2 bg-black text-white rounded-md hover:bg-gray-700"
+                    className="cursor-pointer text-[14px] p-[8px] px-[30px] font-semibold 
+            bg-[rgb(var(--submit))] 
+            text-white
+            rounded-sm"
                 >
                     Save
                 </button>
