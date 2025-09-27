@@ -45,8 +45,8 @@ body {
 }
 
 .bn-editor {
-  background-color: rgb(var(--background)) !important;
-  color: rgb(var(--foreground)) !important;
+  background-color: white !important;
+  color: black !important;
   min-height: 300px;
   border-radius: 0.5rem;
   padding: 1rem;
