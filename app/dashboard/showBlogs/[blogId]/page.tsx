@@ -163,7 +163,7 @@ function BlogPage({ params }: { params: Promise<{ blogId: string }> }) {
             <div className="flex items-center gap-3 mb-8">
                 {post.avatar_url && (
                     <Image
-                        src={post.avatar_url}
+                        src={post.avatar_url ? post.avatar_url : `/avatar.png`}
                         alt={post.author ?post?.author:'Cover'}
                         width={48}
                         height={48}

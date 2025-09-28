@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         hostname: "qohextfemozbghcnnylp.supabase.co",
         pathname: "/storage/**", // allow images from Supabase "storage"
       },
+       {
+        protocol: "https",
+        hostname: "gravatar.com",
+      },
     ],
   },
   reactStrictMode: false,

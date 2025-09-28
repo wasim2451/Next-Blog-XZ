@@ -15,3 +15,16 @@ export const Paragraph= (props) => {
     )
 }
 //This is a Blog Application that uses Next.js 13 latest features and components. Feel free to fork and play around .
+
+export function Heading2(props) {
+    return (
+        <h1 className="font-[700] md:font-[600] md:text-6xl md:px-[12%] text-2xl px-[10px] " style={outfit.style}>{props.text}</h1>
+    )
+}
+
+//paragraph 2
+export const Paragraph2= (props) => {
+    return (
+        <p className="max-w-[43rem] text-[14px] text-slate-500 md:text-[18px] text-center">{props.text}</p>
+    )
+}

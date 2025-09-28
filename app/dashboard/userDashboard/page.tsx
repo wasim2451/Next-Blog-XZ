@@ -51,7 +51,7 @@ export default async function Dashboard() {
       {user_object.avatar_url && (
         <Image
           className="rounded-full"
-          src={user_object.avatar_url}
+          src={user_object.avatar_url?user_object.avatar_url : `/avatar.png`}
           alt="User Image"
           width={40}
           height={40}
