@@ -5,7 +5,7 @@ import FeaturesCard from '@/components/blog/FeaturesCard';
 function FeatureSection() {
     const features = [
         {
-            icon: "/icons/nextjs.svg",
+            icon: "/icons/nextjs.png",
             title: "Next.js 15",
             description: "App Router based project with layouts, routing, loading UI, dynamic routes, API routes, and fully server‑side & client‑side rendering support.",
         },
@@ -20,7 +20,7 @@ function FeatureSection() {
             description: "Database powered by Supabase (Postgres) along with RLS (disabled in dev for testing ). Includes Supabase Storage for uploading & serving blog cover images and avatars.",
         },
         {
-            icon: "/icons/nextjs.svg",
+            icon: "/icons/kinde.png",
             title: "Kinde",
             description: "Authentication and session handling with Kinde Auth and middleware‑based route protection. Auth state used on both client & server.",
         },
