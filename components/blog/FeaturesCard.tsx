@@ -3,11 +3,12 @@ import Image from "next/image";
 
 interface FeaturesCardProps {
     icon: string;       // path to icon image (in /public or URL)
+    iconDark:string;
     title: string;      // feature title
     description: string; // feature description
 }
 
-function FeaturesCard({ icon, title, description }: FeaturesCardProps) {
+function FeaturesCard({ icon,iconDark, title, description }: FeaturesCardProps) {
     return (
         <div
             className="rounded-lg border border-[rgb(var(--border))] 
@@ -20,14 +21,16 @@ function FeaturesCard({ icon, title, description }: FeaturesCardProps) {
                     src={icon}
                     alt={title}
                     fill
+                    unoptimized
                     className="object-contain block dark:hidden"
                 />
 
                 {/* Dark mode icon */}
                 <Image
-                    src={icon.replace(/(\.\w+)$/, "-invert$1")} // changes .png → -invert.png
+                    src={iconDark}
                     alt={title}
                     fill
+                    unoptimized
                     className="object-contain hidden dark:block"
                 />
             </div>

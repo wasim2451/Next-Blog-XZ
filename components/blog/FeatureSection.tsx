@@ -6,31 +6,37 @@ function FeatureSection() {
     const features = [
         {
             icon: "/icons/nextjs.png",
+            iconDark: "/icons/nextjs-invert.png",
             title: "Next.js 15",
             description: "App Router based project with layouts, routing, loading UI, dynamic routes, API routes, and fully server‑side & client‑side rendering support.",
         },
         {
             icon: "/icons/react.png",
+            iconDark: "/icons/react-invert.png",
             title: "React 19",
             description: "Uses modern React features with Server and Client Components along with React hooks for managing states and lifecycle.",
         },
         {
             icon: "/icons/supabase.png",
+            iconDark: "/icons/supabase-invert.png",
             title: "Supabase Database",
             description: "Database powered by Supabase (Postgres) along with RLS (disabled in dev for testing ). Includes Supabase Storage for uploading & serving blog cover images and avatars.",
         },
         {
             icon: "/icons/kinde.png",
+            iconDark: "/icons/kinde-invert.png",
             title: "Kinde",
             description: "Authentication and session handling with Kinde Auth and middleware‑based route protection. Auth state used on both client & server.",
         },
         {
             icon: "/icons/shadcn.png",
+            iconDark: "/icons/shadcn-invert.png",
             title: "Shadcn",
             description: "UI built using shadcn/ui + Radix UI primitives styled with Tailwind CSS. Custom theme system with CSS variables for dark/light mode",
         },
         {
             icon: "/icons/vercel.png",
+            iconDark: "/icons/vercel-invert.png",
             title: "Vercel",
             description: "Built for deployment on Vercel (Next.js native), leveraging edge‑ready APIs.",
         },
@@ -50,6 +56,7 @@ function FeatureSection() {
                     <FeaturesCard
                         key={f.title}
                         icon={f.icon}
+                        iconDark={f.iconDark}
                         title={f.title}
                         description={f.description}
                     />
