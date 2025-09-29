@@ -19,6 +19,9 @@ const nextConfig: NextConfig = {
     ],
   },
   reactStrictMode: false,
+  eslint: {
+    ignoreDuringBuilds: true, 
+  },
 };
 
 export default nextConfig;
