@@ -18,7 +18,7 @@ function HeroSection(props: Props) {
                    bg-[rgb(var(--badge))] text-[rgb(var(--card-foreground))] 
                    "
       >
-        <Link href="https://x.com/WASIMAKHTA48368" target="_blank">
+        <Link href="https://x.com/WASIMAKHTA48368" target="_blank" prefetch={true}>
           Follow along on X (Twitter)
         </Link>
       </Badge>
@@ -40,7 +40,7 @@ function HeroSection(props: Props) {
           "
                      
         >
-          <Link href={`/blogs`}>Get Started</Link>
+          <Link href={`/blogs`} prefetch={true}>Get Started</Link>
         </Button>
 
         {/* Secondary Button: Subtle with border */}
@@ -51,7 +51,7 @@ function HeroSection(props: Props) {
                      hover:bg-[rgb(var(--secondary))] 
                      hover:text-[rgb(var(--foreground))]"
         >
-          <Link href={`https://github.com/wasim2451/Next-Blog-XZ`} target="_blank">
+          <Link href={`https://github.com/wasim2451/Next-Blog-XZ`} target="_blank" prefetch={true}>
             Github
           </Link>
         </Button>

@@ -10,8 +10,8 @@ import ModeToggle from '../ui/modeToggle';
 
 export default function Navbar() {
     const pathname = usePathname();
-    const { isAuthenticated , getUser } = useKindeBrowserClient();
-    const {user}=getUser;
+    const { isAuthenticated, getUser } = useKindeBrowserClient();
+    const { user } = getUser;
     console.log(user);
 
     return (
@@ -23,9 +23,9 @@ export default function Navbar() {
                         <p className="text-[18px] md:text-[20px] font-[700]" style={outfit.style}>inkWire</p>
                     </div>
                     <ul className="hidden md:flex items-center md:gap-3 text-[rgb(var(--foreground))]/70 font-[400] text-sm md:text-[15px]">
-                        <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]"><Link href="/">Home</Link></li>
-                        <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]"><Link href="https://s3.us-east-1.amazonaws.com/bucket.wasim.portfolio/index.html">About</Link></li>
-                        <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]"><Link href="/blogs">Blogs</Link></li>
+                        <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]"><Link href="/" prefetch={true}>Home</Link></li>
+                        <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]"><Link href="https://s3.us-east-1.amazonaws.com/bucket.wasim.portfolio/index.html" prefetch={true}>About</Link></li>
+                        <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]"><Link href="/blogs" prefetch={true}>Blogs</Link></li>
                         {isAuthenticated ? (
                             <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]">
                                 <Link href="/dashboard/userDashboard">Dashboard</Link>
@@ -62,6 +62,7 @@ export default function Navbar() {
                                     pathname === "/" && "font-semibold text-[rgb(var(--foreground))]"
                                 )}
                                 href={`/`}
+                                prefetch={true}
                             >
                                 Home
                             </Link>
@@ -85,6 +86,7 @@ export default function Navbar() {
                                     pathname === "/blogs" && "font-semibold text-[rgb(var(--foreground))]"
                                 )}
                                 href={'/blogs'}
+                                prefetch={true}
                             >
                                 Blogs
                             </Link>
@@ -97,6 +99,7 @@ export default function Navbar() {
                                         pathname === "/dashboard/userDashboard" && "font-semibold text-[rgb(var(--foreground))]"
                                     )}
                                     href={'/dashboard/userDashboard'}
+                                    prefetch={true}
                                 >
                                     Dashboard
                                 </Link>
