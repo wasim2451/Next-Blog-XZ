@@ -85,7 +85,7 @@ export default function CreateBlogPage({ params }: Props) {
 
       <form
         onSubmit={handleSubmit}
-        className="px-[10px] md:px-[11%] py-[20px] md:py-[30px]"
+        className="px-[10px] md:px-[11%] py-[20px] md:py-[30px] min-h-screen"
       >
         <div className="flex justify-center items-center mb-5">
           <input
