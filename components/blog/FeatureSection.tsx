@@ -1,8 +1,10 @@
 import React from 'react'
 import { Heading2, Paragraph2 } from './Text';
 import FeaturesCard from '@/components/blog/FeaturesCard';
+import { useTheme } from 'next-themes';
 
 function FeatureSection() {
+    
     const features = [
         {
             icon: "/icons/nextjs.png",
@@ -23,7 +25,7 @@ function FeatureSection() {
             description: "Database powered by Supabase (Postgres) along with RLS (disabled in dev for testing ). Includes Supabase Storage for uploading & serving blog cover images and avatars.",
         },
         {
-            icon: "/icons/kinde.png",
+            icon: "/dark/kinde.png",
             iconDark: "/icons/kinde-invert.png",
             title: "Kinde",
             description: "Authentication and session handling with Kinde Auth and middleware‑based route protection. Auth state used on both client & server.",

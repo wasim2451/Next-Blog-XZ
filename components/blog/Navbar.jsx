@@ -24,7 +24,7 @@ export default function Navbar() {
                     </div>
                     <ul className="hidden md:flex items-center md:gap-3 text-[rgb(var(--foreground))]/70 font-[400] text-sm md:text-[15px]">
                         <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]"><Link href="/">Home</Link></li>
-                        <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]"><Link href="/about">About</Link></li>
+                        <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]"><Link href="">About</Link></li>
                         <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]"><Link href="/blogs">Blogs</Link></li>
                         {isAuthenticated ? (
                             <li className="inline-block mr-4 hover:text-[rgb(var(--foreground))]">

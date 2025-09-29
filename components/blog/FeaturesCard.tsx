@@ -1,14 +1,18 @@
+'use client';
 import React from "react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 interface FeaturesCardProps {
     icon: string;       // path to icon image (in /public or URL)
-    iconDark:string;
+    iconDark: string;
     title: string;      // feature title
     description: string; // feature description
 }
 
-function FeaturesCard({ icon,iconDark, title, description }: FeaturesCardProps) {
+function FeaturesCard({ icon, iconDark, title, description }: FeaturesCardProps) {
+    const { theme } = useTheme();
+
     return (
         <div
             className="rounded-lg border border-[rgb(var(--border))] 
@@ -18,20 +22,10 @@ function FeaturesCard({ icon,iconDark, title, description }: FeaturesCardProps) 
             {/* Icon */}
             <div className="h-[50px] w-[50px] relative">
                 <Image
-                    src={icon}
+                    src={theme === "dark" ? iconDark : icon}
                     alt={title}
                     fill
-                    unoptimized
-                    className="object-contain block dark:hidden"
-                />
-
-                {/* Dark mode icon */}
-                <Image
-                    src={iconDark}
-                    alt={title}
-                    fill
-                    unoptimized
-                    className="object-contain hidden dark:block"
+                    className="object-contain"
                 />
             </div>
 
