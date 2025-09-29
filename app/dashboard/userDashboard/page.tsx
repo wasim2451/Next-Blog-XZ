@@ -43,7 +43,7 @@ export default async function Dashboard() {
     posts = data || [];
   }
 
-  console.log("Fetched posts:", posts);
+//   console.log("Fetched posts:", posts);
 
   // ✅ User Info small component
   const UserInfo = () => (
@@ -85,9 +85,9 @@ export default async function Dashboard() {
       {/* ✅ Posts Section */}
       <div className="mt-10 mb-5">
         {errorMsg ? (
-          <p className="text-red-500">Failed to load posts: {errorMsg}</p>
+          <p className="text-red-500 text-center">Failed to load posts: {errorMsg}</p>
         ) : posts.length === 0 ? (
-          <p className="text-slate-500">No blogs yet. Write your first blog!</p>
+          <p className="text-slate-500 text-center">No blogs yet. Write your first blog!</p>
         ) : (
           <div className={posts.length<=1?`grid grid-cols-1 md:px-[25%]`:`grid grid-cols-1 md:grid-cols-2 gap-6 md:mx-[10%]`}>
             {/* Render your <Card /> here */}
