@@ -5,7 +5,7 @@ import { supabase } from "@/lib/supabase/client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
-
+import { revalidatePath } from "next/cache"; 
 interface Props {
   params: Promise<{ postId: string }>;
 }

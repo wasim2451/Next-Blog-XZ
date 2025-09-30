@@ -2,8 +2,9 @@ import React from "react";
 import { Paragraph } from "@/components/blog/Text";
 import { supabase } from "@/lib/supabase/client";
 import Card from "@/components/blog/card";
-
+import { unstable_noStore as noStore } from "next/cache";
 async function Page() {
+    noStore();
   // Fetch posts from Supabase
   const { data: posts, error } = await supabase.from("posts").select("*");
 
@@ -38,7 +39,7 @@ async function Page() {
             />
           ))
         ) : (
-          <p className="mt-6 text-gray-500">No posts yet. Be the first to write one!</p>
+          <p className="mt-6 text-gray-500 text-center">No posts yet. Be the first to write one!</p>
         )}
       </div>
     </main>
