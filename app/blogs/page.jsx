@@ -1,10 +1,9 @@
+export const dynamic = "force-dynamic";
 import React from "react";
 import { Paragraph } from "@/components/blog/Text";
 import { supabase } from "@/lib/supabase/client";
 import Card from "@/components/blog/card";
-import { unstable_noStore as noStore } from "next/cache";
 async function Page() {
-    noStore();
   // Fetch posts from Supabase
   const { data: posts, error } = await supabase.from("posts").select("*");
 
@@ -12,7 +11,7 @@ async function Page() {
     console.error("Error fetching posts:", error);
     return <p className="text-center mt-10">Failed to load posts</p>;
   }
-
+  console.log(posts);
   return (
     <main className="px-[10px] md:px-[20%] py-[20px] md:py-[20px] text-left min-h-screen">
       {/* Header */}
